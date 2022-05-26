@@ -1,0 +1,237 @@
+ h1{
+   color:white;
+   text-align:center;
+   font-size:5vw;
+   padding:6px;
+
+ }
+img{
+  max-width:100%;
+  
+}
+ h2{
+   text-align:center;
+   font-size:3vw;
+
+ }
+ h3{color:white;
+   text-align:center;
+   font-size:3vw;
+   
+ }
+ 
+ header{
+   grid-area:header;
+   padding:5px;
+  background-color:	#484848;
+   
+ }
+ 
+ .headerpic{
+  grid-area:headerpic;
+  padding:5px;
+  height:10vmax;
+}
+.headertext{
+  grid-area:headertext;
+  text-align:center;
+}
+.headwrapper{
+  display:grid;
+  justify-items:center;
+  align-items:center;
+  grid-template-columns:25% auto;
+grid-template-areas:
+  "headerpic headertext";
+}
+ main{
+   grid-area:main;
+   font-size:20px;
+   text-align:center;
+   padding:6px;
+   background-color:#484848;
+ }
+ nav{
+   grid-area:nav;
+    padding:5px;
+  background-color:	#484848;
+    list-style-type:none;
+    font-size:25px;
+ }
+ body{
+   background-color:#303030;
+ }
+/*This stuff is to make my navigation go horizontal on full screen*/
+.first {
+    grid-area:first;
+    margin-left:0;
+}
+
+.second {
+    grid-area:second;
+}
+
+.third {
+    grid-area:third;
+}
+
+.fourth {
+    grid-area:fourth;
+}
+
+.fifth {
+    grid-area:fifth;
+}
+.sixth {
+  grid-area:sixth;
+}
+
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth"
+    "sixth";
+    }
+ footer{
+   grid-area:footer;
+   color: white;
+   text-align:center;
+   padding:5px;
+  background-color: #484848;
+   
+ }
+
+/*---------------------------Mobile Layout----------------------------*/
+.container1 { /*for tests.html*/
+  display: grid;
+  grid-template-columns:auto 1fr;
+  grid-gap:.5em;
+  margin:1%;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+    }
+
+.nestedgrid{
+display:grid;
+grid-template-columns:100%;
+grid-template-areas:
+"section"
+"fig1";
+}
+.nestedgrid2{
+display:grid;
+grid-template-columns:100%;
+grid-template-areas:
+"div1"
+"div2";
+}
+/*This stuff is for the hamburger menu*/
+.toggleNav {
+    text-align:center;
+    display:grid; /*This is what allows the hamburger icon and "Menu" to display*/
+    }
+
+#flex-nav ul {
+    display: none; /*jQuery toggles the nav from to this class to the .open when clicked*/
+    text-align:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+ 
+#flex-nav ul.open { /*.open is the class that gets toggled when clicked (with help from the jQuery code)*/
+    display:grid;
+    }
+    
+#flex-nav li {
+    padding-left:10px;
+    padding-top:10px;
+    }
+
+#flex-nav a {
+    color:white;
+    text-decoration:none;
+    }
+
+#flex-nav a:hover {
+    color:mediumspringgreen;
+    }
+
+/*-----------------------Tablet Media Query------------------------*/
+@media only screen and (min-width: 480px)  {
+.container1 { /*for tests.html*/
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main main"
+    "footer footer";
+    }
+
+.nestedgrid{
+display:grid;
+grid-template-columns:100%;
+grid-template-areas:
+"section"
+"fig1";
+}
+.nestedgrid2{
+display:grid;
+grid-template-columns:100%;
+grid-template-areas:
+"div1"
+"div2";
+}
+
+
+/*-----------------------Desktop Media Query------------------------*/
+@media only screen and (min-width: 960px)  {
+
+.container1 { /*for tests.html*/
+  grid-template-columns: 15% 1fr;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main main"
+    "footer footer";
+    }
+    
+.nestedgrid{
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-areas:
+"section fig1";
+}
+.nestedgrid2{t
+display:grid;
+grid-template-columns:1fr 1fr;
+grid-template-areas:
+"div1 div2";
+}
+#navwrapper {
+    display:grid;
+    grid-template-areas:
+    "first second third fourth fifth sixth";
+    }
+    
+.toggleNav {
+    display: none; /*Makes the hamburger icon with the word "Menu" to disappear at this screen size*/
+  }
+  
+#flex-nav ul {
+    display:grid;
+    text-align:center;
+  }
+
+#flex-nav li {
+    
+    padding-top:10px;
+    }
+}
